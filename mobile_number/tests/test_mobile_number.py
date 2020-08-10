@@ -12,24 +12,22 @@ Class TestModule(common.TransactionCase):
     def test_data(self):
         #Add Test Code Here
         
-        # Create a New Project with the Test
-        test_project = self.env['project.project'].create({
-            'name': 'TestProject'
-        })
-
-        # Add a Test Task to the Project
-        test_project_task = self.env['project.task'].create({
-            'name': 'ExampleTask',
-            'project_id': test_project.id
+        # Create a New Location with the Test
+        test_location_1 = self.env['stock.location'].create({
+            'name': 'Location_1',
+            'usage':'internal'
         })
         
-
-        # Check if the project name and the task name match
-        self.assertEqual(test_project.name, 'TestProject')
-        self.assertEqual(test_project_task.name, 'ExampleTask')
+        # Create a Another Location
+        test_location_2 = self.env['stock.location'].create({
+            'name': 'Location_2',
+            'usage':'internal'
+        })
         
-        # Check if the project assigned to the task is in fact the correct id
-        self.assertEqual(test_project_task.project_id.id, test_project.id)
+        # Check if the usage of the two created locations are the same
         
-        # Print to show it visually
-        print('Your Test Was Succesfull!')
+        # Assert functions are used to check whether the operation’s output is True or False
+        self.assertEqual(test_location_1.usage, test_location_2.usage)
+        
+        # Show Test Result
+        print("Test is Successful")
