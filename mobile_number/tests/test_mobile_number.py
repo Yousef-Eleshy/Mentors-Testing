@@ -3,7 +3,7 @@
 from odoo.tests import common
 
 
-Class TestModule(common.TransactionCase):
+class TestModule(common.TransactionCase):
     def setUp(self):
         super(TestModule, self).setUp()
         #Add Test Setup Code Here
