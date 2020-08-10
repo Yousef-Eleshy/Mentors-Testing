@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from odoo.tests import common
+# import logging
+
+# _logger = logging.getLogg
 
 
 class TestModule(common.TransactionCase):
@@ -21,7 +24,7 @@ class TestModule(common.TransactionCase):
         # Create a Another Location
         test_location_2 = self.env['stock.location'].create({
             'name': 'Location_2',
-            'usage':'internal'
+            'usage':'supplier'
         })
         
         # Check if the usage of the two created locations are the same
