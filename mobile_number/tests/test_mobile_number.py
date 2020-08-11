@@ -24,7 +24,7 @@ class TestModule(common.TransactionCase):
         # Create a Another Location
         test_location_2 = self.env['stock.location'].create({
             'name': 'Location_2',
-            'usage':'supplier'
+            'usage':'internal'
         })
         
         # Check if the usage of the two created locations are the same
