@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+# import unittest
 from odoo.tests import common
 # import logging
 
@@ -7,6 +8,10 @@ from odoo.tests import common
 
 
 class TestModule(common.TransactionCase):
+    
+#     at_install = True
+#     post_install = True
+    
     def setUp(self):
         super(TestModule, self).setUp()
         #Add Test Setup Code Here
@@ -30,7 +35,8 @@ class TestModule(common.TransactionCase):
         # Check if the usage of the two created locations are the same
         
         # Assert functions are used to check whether the operation’s output is True or False
-        self.assertEqual(test_location_1.usage, test_location_2.usage)
+        self.assertEqual(test_location_1.usage, test_location_2.usage, msg='TEST SUCCESS')
         
-        # Show Test Result
-        print("Test is Successful")
+    
+#     if __name__ == '__main__':
+#         unittest.main()
