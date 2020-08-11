@@ -29,13 +29,13 @@ class TestModule(common.TransactionCase):
         # Create a Another Location
         test_location_2 = self.env['stock.location'].create({
             'name': 'Location_2',
-            'usage':'internal'
+            'usage':'storage'
         })
         
         # Check if the usage of the two created locations are the same
         
         # Assert functions are used to check whether the operation’s output is True or False
-        self.assertEqual(test_location_1.usage, test_location_2.usage, msg='TEST SUCCESS')
+        self.assertEqual(test_location_1.usage, test_location_2.usage, msg='TEST FAILED')
         
     
 #     if __name__ == '__main__':
